@@ -4,3 +4,5 @@ Scripts/
 *.pyc
 *.*~
 *.swp
+node_modules/
+public/

@@ -1,0 +1,19 @@
+.land-section {
+  flex: 1 100%;
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px solid black;
+}
+
+.bread-list {
+  list-style-type: none;
+  -moz-padding-start: 0px;
+  -webkit-padding-start: 0px;
+  -khtml-padding-start: 0px;
+  -o-padding-start: 0px;
+}
+
+.bread-list-icon {
+  display: inline-block;
+}

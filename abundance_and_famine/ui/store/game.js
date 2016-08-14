@@ -1,21 +1,48 @@
-const initialState = {};
+const STARTING_TICKETS = 5;
+
+const initialState = {
+  player: {
+    ticketsThisRound: STARTING_TICKETS,
+    tickets: STARTING_TICKETS,
+    bread: 0,
+    joined: false,
+  },
+};
 
 export default function game(state = initialState, action) {
   switch (action.type) {
-    case 'MOVE_TO_FAMINE':
-      // find player, update their location
+    case 'ADD_PLAYER':
+      return state;
+    case 'ADD_PLAYER_SUCCESS':
       return Object.assign({}, state, {
+        player: Object.assign({}, state.player, action.player),
       })
-    case 'MOVE_TO_ABUNDANCE':
-      // find player, update their location
+    case 'ADD_PLAYER_FAIL':
+      return state;
+    case 'BUY_TICKET':
       return Object.assign({}, state, {
+        player: Object.assign({}, state.player, {
+          tickets: state.player.tickets - 1,
+          /*
+          bread: {
+            [action.name]: state.player.bread[action.name] + 1,
+          }
+          */
+        })
       })
-    case 'ASSIGN_BREAD':
-      // find all players with action.location, update their bread count
+    case 'REFUND_TICKET':
       return Object.assign({}, state, {
+        player: Object.assign({}, state.player, {
+          tickets: state.player.tickets + 1,
+          /*
+          bread: {
+            [action.name]: state.player.bread[action.name] - 1,
+          }
+          */
+        })
       })
     case 'NEW_ROUND':
-      // clear all locations from 
+      // convert all bread to points
       return Object.assign({}, state, {
       })
     default:

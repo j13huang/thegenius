@@ -1,22 +1,28 @@
 const initialState = {
-  fetching: false,
+  fetchingPlayers: false,
   players: [],
 };
 
+
 export default function players(state = initialState, action) {
   switch (action.type) {
-    case 'FETCHING_NEW_PLAYER':
+    case 'ADD_PLAYER_SUCCESS':
+      // TEMP JUST TO ADD PLAYERS LOCALLY
       return Object.assign({}, state, {
-        fetching: true,
+        players: [...state.players, action.player],
       })
-    case 'FETCHING_NEW_PLAYER_SUCCESS':
+    case 'FETCHING_PLAYERS':
       return Object.assign({}, state, {
-        fetching: false,
+        fetchingPlayers: true,
+      })
+    case 'FETCHING_PLAYERS_SUCCESS':
+      return Object.assign({}, state, {
+        fetchingPlayers: false,
         players: [...players, action.player]
       })
-    case 'FETCHING_NEW_PLAYER_FAIlED':
+    case 'FETCHING_PLAYERS_FAIL':
       return Object.assign({}, state, {
-        fetching: false,
+        fetchingPlayers: false,
       })
     default:
       return state

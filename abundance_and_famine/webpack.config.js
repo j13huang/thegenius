@@ -17,8 +17,15 @@ var config = {
         include : APP_DIR,
         exclude: /node_modules/,
         loader : 'babel'
-      }
-    ]
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
+    ],
+    resolve: {
+      extensions: ['', '.js', '.jsx', '.css']
+    }
   }
 };
 

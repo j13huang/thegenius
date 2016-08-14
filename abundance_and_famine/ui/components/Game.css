@@ -1,0 +1,20 @@
+.land-container {
+  display: flex;
+  justify-content: center;
+}
+
+.players-header {
+  display: inline-block;
+}
+
+.players-list {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.players-list-item {
+  border: 1px solid black;
+  margin: 1px;
+  padding: 5px;
+  display: inline-block;
+}

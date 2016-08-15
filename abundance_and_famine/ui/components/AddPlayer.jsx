@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { addPlayer } from '../actions';
 
-function AddPlayer({player, addPlayer}) {
+function AddPlayer({ player, joinGameClick }) {
   let _input;
   /*
   if (player.joined) {
@@ -15,8 +15,8 @@ function AddPlayer({player, addPlayer}) {
   */
   return (
     <div>
-      <input ref={(r) => _input = r} onKeyPress={(e) => ((e.key === "Enter") && addPlayer(_input) )}/>
-      <button onClick={() => addPlayer(_input)}>Join Game!</button>
+      <input ref={(r) => _input = r} onKeyPress={(e) => ((e.key === "Enter") && joinGameClick(_input) )}/>
+      <button onClick={() => joinGameClick(_input)}>Join Game!</button>
     </div>
   );
 }
@@ -28,7 +28,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addPlayer: (input) => {
+  joinGameClick: (input) => {
     if (!input.value) {
       return;
     }

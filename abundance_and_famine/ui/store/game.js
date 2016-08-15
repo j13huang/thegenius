@@ -1,6 +1,7 @@
 const STARTING_TICKETS = 5;
 
 const initialState = {
+  roundLocked: false,
   player: {
     ticketsThisRound: STARTING_TICKETS,
     tickets: STARTING_TICKETS,
@@ -23,28 +24,24 @@ export default function game(state = initialState, action) {
       return Object.assign({}, state, {
         player: Object.assign({}, state.player, {
           tickets: state.player.tickets - 1,
-          /*
-          bread: {
-            [action.name]: state.player.bread[action.name] + 1,
-          }
-          */
         })
       })
     case 'REFUND_TICKET':
       return Object.assign({}, state, {
         player: Object.assign({}, state.player, {
           tickets: state.player.tickets + 1,
-          /*
-          bread: {
-            [action.name]: state.player.bread[action.name] - 1,
-          }
-          */
         })
       })
-    case 'NEW_ROUND':
-      // convert all bread to points
+    case 'LOCK_IN_TICKETS':
+      return Object.assign({}, state, {
+        roundLocked: true,
+      })
+    case 'FETCH_NEW_ROUND_SUCCESS':
+      // convert all tickets spent to points
       return Object.assign({}, state, {
       })
+    case 'FETCH_NEW_ROUND_FAIL':
+      return state
     default:
       return state
   }

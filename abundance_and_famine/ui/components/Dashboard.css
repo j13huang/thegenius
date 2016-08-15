@@ -1,0 +1,16 @@
+.dashboard-container {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.dashboard-round-locked {
+  background-color: sandybrown;
+}
+
+.tickets-header {
+  display: inline-block;
+}
+
+.tickets-count {
+  display: inline-block;
+}

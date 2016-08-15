@@ -6,6 +6,10 @@
   border: 1px solid black;
 }
 
+.land-section-round-locked {
+  background-color: sandybrown;
+}
+
 .bread-list {
   list-style-type: none;
   -moz-padding-start: 0px;

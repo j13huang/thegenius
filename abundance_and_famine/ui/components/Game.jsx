@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import AddPlayer from './AddPlayer.jsx';
 import Land from './Land.jsx';
+import AddPlayer from './AddPlayer.jsx';
+import Dashboard from './Dashboard.jsx';
 
 import './Game.css';
 
@@ -19,7 +20,7 @@ function Game({ players }) {
         ))}
       </ul>
       <AddPlayer/>
-      <button>Lock In Tickets</button>
+      <Dashboard/>
     </div>
   );
 }

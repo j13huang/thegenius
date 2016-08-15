@@ -12,9 +12,9 @@ export function addPlayer(name, dispatch) {
   });
 }
 
-export function newRound() {
+export function lockInTickets() {
   return {
-    type: 'NEW_ROUND',
+    type: 'LOCK_IN_TICKETS',
   };
 }
 
